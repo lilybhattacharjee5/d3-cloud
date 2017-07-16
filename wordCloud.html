@@ -1,0 +1,59 @@
+<!--
+Author: Lily Bhattacharjee
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <meta charset="UTF-8">
+    <title>Facebook Chat Word Frequency Cloud</title>
+
+    <!-- d3 cdn file -->
+    <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+
+    <!-- references word cloud formatting files in same directory -->
+    <script src="d3-cloud/d3.layout.cloud.js"></script>
+
+    <!-- jQuery cdn file -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+    <!-- google fonts css -->
+    <link href="https://fonts.googleapis.com/css?family=Lato:100" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Sail" rel="stylesheet">
+
+    <!-- custom css link -->
+    <link href="cloud-page-style.css" rel="stylesheet">
+
+</head>
+<body>
+
+    <script type = "text/javascript" src = "wordCloudCreation.js"></script>
+
+    <h1>Facebook Chat Word Cloud</h1>
+    <p>This application shows you the words that are used most commonly in the Facebook chats you're a member of using a word cloud format!</p>
+    <p>Customize the display below.</p>
+    <br>
+    <hr>
+    <br>
+
+    <!-- allows user to enter number of words displayed on the word cloud -->
+    <p>Number of words displayed: </p>
+    <input type = "text" id = "number_of_words" name = "number_of_words" class = "custom1">
+    <div id = "submit-button" class = "custom1">Submit</div>
+    <div id = "response1" class = "custom1"></div>
+
+    <br>
+
+    <!--
+    <input type = "text" id = "number_of_words" name = "number_of_words" class = "custom1">
+    <div id = "submit-button" class = "custom1">Submit</div>
+    <div id = "response1">Number of words</div>
+    -->
+    <br><br><br>
+    <div class = "word-cloud" align = "center"></div>
+    <br><br><br>
+
+    <h2>An Explanation</h2>
+
+</body>
+</html>
