@@ -97,6 +97,7 @@ public class ReadFile {
 
         int rankingLimit = counts.size();
         String uniqueItemsString;
+        int originalCount = counts.get(findListMaximum(counts));
         String ranksString = "";
         int size;
 
@@ -105,16 +106,15 @@ public class ReadFile {
 
             maximumIndex = findListMaximum(counts);
             uniqueItemsString = uniqueItems.get(maximumIndex);
-            size = (int) (Math.floor(counts.get(maximumIndex) / 20));
-
-            if (uniqueItems.get(maximumIndex).contains("\\")) {
-                uniqueItemsString += "\"";
-            }
-            if (uniqueItems.get(maximumIndex).contains("\"")) {
-                uniqueItemsString = "\\" + uniqueItems.get(maximumIndex);
-            }
+            size = (int) (Math.floor(counts.get(maximumIndex)) / (originalCount / 2000));
 
             if (size > 0) {
+                uniqueItemsString = uniqueItemsString.replace("\\", "\\\\")
+                        .replace("\"", "\\\"")
+                        .replace("\r", "\\r")
+                        .replace("\n", "\\n")
+                        .replace("\u2028", "\\u2028")
+                        .replace("\u2029", "\\u2029");
                 newInput = "[" + "{\"text\": \"" + uniqueItemsString + "\"},{" + " \"size\": \"" + (size) + "\"}], \n";
                 ranksString += newInput;
             }
