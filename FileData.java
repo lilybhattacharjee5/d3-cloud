@@ -36,7 +36,7 @@ public class FileData {
 
         try {
 
-            FileData messages = new FileData("src/messages.txt");
+            FileData messages = new FileData("messages.txt");
             messages.createRankFile();
 
         } catch (IOException e) {

@@ -90,7 +90,7 @@ public class ReadFile {
         ArrayList<Integer> counts = processList(totalLines);
         int maximumIndex;
         String newInput;
-        BufferedWriter writer = new BufferedWriter(new FileWriter("src/ranks.txt"));
+        BufferedWriter writer = new BufferedWriter(new FileWriter("ranks.txt"));
 
         // begins file with standard json format for arrays i.e. [
         writer.write("[\n");
